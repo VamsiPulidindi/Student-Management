@@ -151,9 +151,6 @@ student-management-v1/
 ```
 ```
 
-```
-
----
 
 ## Database Schema
 
