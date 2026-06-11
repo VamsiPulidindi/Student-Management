@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: nginx1-studentdep
+  namespace: web-app1
+
+spec:
+  replicas: 1 
+
+  selector:
+    matchLabels:
+      app: nginx1-studentdep
+
+  template:
+    metadata:
+      labels:
+        app: nginx1-studentdep
+
+    spec:
+      containers:
+        - name: nginx
+          image: vamsiv22/student-management-flask:v1
+
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: html
+              mountPath: /usr/share/nginx/html
+
+      volumes:
+        - name: html
+          configMap:
+            name: nginx-html
