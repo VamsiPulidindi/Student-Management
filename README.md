@@ -148,8 +148,6 @@ student-management-v1/
 | `docker-compose.yml` | Local multi-container deployment configuration              |
 | `README.md`          | Project documentation                                       |
 
-```
-```
 
 
 ## Database Schema
