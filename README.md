@@ -98,26 +98,62 @@ MySQL Database
 ## Project Structure
 
 ```text
+## Project Structure
+
+```text
 student-management-v1/
 ├── README.md
-├── app
-│   ├── deployment.yaml
-│   └── service.yaml
 ├── docker-compose.yml
-├── flask-app
+│
+├── flask-app/
 │   ├── Dockerfile
 │   ├── app.py
 │   ├── requirements.txt
-│   ├── static
+│   ├── static/
 │   │   └── style.css
-│   └── templates
+│   └── templates/
+│       ├── index.html
 │       ├── add.html
-│       ├── edit.html
-│       └── index.html
-├── mysql
+│       └── edit.html
+│
+├── mysql/
 │   └── init.sql
-└── nginx
-    └── nginx.conf
+│
+├── nginx/
+│   └── nginx.conf
+│
+├── app/
+│   ├── deployment.yaml
+│   └── service.yaml
+│
+├── k8s/
+│   ├── flask-deployment.yaml
+│   ├── flask-service.yaml
+│   ├── mysql-deployment.yaml
+│   ├── mysql-service.yaml
+│   ├── mysql-secret.yaml
+│   └── mysql-init-configmap.yaml
+│
+└── argocd/
+    └── application.yaml
+```
+
+### Directory Description
+
+| Directory/File       | Purpose                                                     |
+| -------------------- | ----------------------------------------------------------- |
+| `flask-app/`         | Flask application source code and Dockerfile                |
+| `mysql/`             | Database initialization scripts                             |
+| `nginx/`             | Nginx configuration files                                   |
+| `app/`               | Initial Kubernetes manifests used during deployment testing |
+| `k8s/`               | Production Kubernetes manifests for Flask and MySQL         |
+| `argocd/`            | Argo CD Application manifest for GitOps deployment          |
+| `docker-compose.yml` | Local multi-container deployment configuration              |
+| `README.md`          | Project documentation                                       |
+
+```
+```
+
 ```
 
 ---
