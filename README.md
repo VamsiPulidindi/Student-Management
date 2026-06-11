@@ -98,9 +98,6 @@ MySQL Database
 ## Project Structure
 
 ```text
-## Project Structure
-
-```text
 student-management-v1/
 ├── README.md
 ├── docker-compose.yml
